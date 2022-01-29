@@ -1,9 +1,9 @@
 class MoviesController < ApplicationController
-  
   def index
+    @movies = Movie.all
   end
 
   def get
-    return [1,2,3,]
+    @movies = Movie.all
   end
 end
