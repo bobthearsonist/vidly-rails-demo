@@ -62,7 +62,7 @@ jobs:
       - run:
           name: rails test
           command: |
-            ./bin/rails test
+            rake test
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -70,4 +70,9 @@ workflows:
   vidly-workflow:
     jobs:
       - build
-      - test
+      - test:
+          post-steps:
+            - store_artifacts:
+                path: test/reports
+            - store_test_results:
+                path: test/reports
