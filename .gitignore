@@ -36,4 +36,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# system dot files
 .DS_Store
+
+# test reports
+test/reports/*
