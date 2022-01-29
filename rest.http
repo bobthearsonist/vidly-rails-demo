@@ -1,0 +1,7 @@
+GET http://127.0.0.1:3000/index
+content-type: text/html
+
+###
+
+GET http://127.0.0.1:3000/movies
+content-type: application/json
