@@ -20,9 +20,9 @@ jobs:
       # use the node orb to install our packages
       # specifying that we use `yarn` and to cache dependencies with `yarn.lock`
       # learn more: https://circleci.com/docs/2.0/caching/
-      - node/install-packages:
-          pkg-manager: yarn
-          # cache-key: "yarn.lock"
+      # - node/install-packages:
+      #     pkg-manager: yarn
+      #     # cache-key: "yarn.lock"
   test:  # our next job, called "test"
     # we run "parallel job containers" to enable speeding up our tests;
     # this splits our tests across multiple containers.
@@ -30,7 +30,7 @@ jobs:
     # here we set TWO docker images.
     docker:
       - image: cimg/ruby:3.1-node # this is our primary docker image, where step commands run.
-      - image: circleci/postgres:14.1.0
+      # - image: circleci/postgres:14.1.0
         environment: # add POSTGRES environment variables.
           # POSTGRES_USER: circleci-demo-ruby
           # POSTGRES_DB: rails_blog_test
@@ -47,17 +47,17 @@ jobs:
     steps:
       - checkout
       - ruby/install-deps
-      - node/install-packages:
-          pkg-manager: yarn
-          cache-path: ~/project/node_modules
+      # - node/install-packages:
+      #     pkg-manager: yarn
+      #     cache-path: ~/project/node_modules
       # Here we make sure that the secondary container boots
       # up before we run operations on the database.
-      - run:
-          name: Wait for DB
-          command: dockerize -wait tcp://localhost:5432 -timeout 1m
-      - run:
-          name: Database setup
-          command: bundle exec rails db:schema:load --trace
+      # - run:
+      #     name: Wait for DB
+      #     command: dockerize -wait tcp://localhost:5432 -timeout 1m
+      # - run:
+      #     name: Database setup
+      #     command: bundle exec rails db:schema:load --trace
       # Run rspec in parallel
       - ruby/rspec-test
 
