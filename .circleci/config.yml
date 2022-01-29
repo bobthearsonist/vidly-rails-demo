@@ -59,7 +59,10 @@ jobs:
       #     name: Database setup
       #     command: bundle exec rails db:schema:load --trace
       # Run rspec in parallel
-      - ruby/rspec-test
+      - run:
+          name: rails test
+          command: |
+            ./bin/rails test
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
