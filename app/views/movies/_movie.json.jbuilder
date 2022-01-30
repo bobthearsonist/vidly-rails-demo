@@ -1,2 +1,2 @@
-json.extract! movie, :id, :title, :genre, :numberInStock, :dailyRentalRate, :publishDate, :liked, :created_at, :updated_at
+json.extract! movie, :id, :title, :numberInStock, :dailyRentalRate, :publishDate, :liked, :genre_id, :created_at, :updated_at
 json.url movie_url(movie, format: :json)

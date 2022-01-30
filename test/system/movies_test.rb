@@ -15,7 +15,7 @@ class MoviesTest < ApplicationSystemTestCase
     click_on "New movie"
 
     fill_in "Dailyrentalrate", with: @movie.dailyRentalRate
-    fill_in "Genre", with: @movie.genre
+    fill_in "Genre", with: @movie.genre_id
     check "Liked" if @movie.liked
     fill_in "Numberinstock", with: @movie.numberInStock
     fill_in "Publishdate", with: @movie.publishDate
@@ -31,7 +31,7 @@ class MoviesTest < ApplicationSystemTestCase
     click_on "Edit this movie", match: :first
 
     fill_in "Dailyrentalrate", with: @movie.dailyRentalRate
-    fill_in "Genre", with: @movie.genre
+    fill_in "Genre", with: @movie.genre_id
     check "Liked" if @movie.liked
     fill_in "Numberinstock", with: @movie.numberInStock
     fill_in "Publishdate", with: @movie.publishDate

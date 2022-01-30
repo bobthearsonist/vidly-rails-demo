@@ -2,16 +2,16 @@
 
 one:
   title: MyString
-  genre: MyString
   numberInStock: 1
   dailyRentalRate: 1.5
-  publishDate: 2022-01-29 11:09:36
+  publishDate: 2022-01-30 14:53:05
   liked: false
+  genre: one
 
 two:
   title: MyString
-  genre: MyString
   numberInStock: 1
   dailyRentalRate: 1.5
-  publishDate: 2022-01-29 11:09:36
+  publishDate: 2022-01-30 14:53:05
   liked: false
+  genre: two
